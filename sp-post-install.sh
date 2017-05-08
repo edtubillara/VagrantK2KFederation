@@ -122,7 +122,7 @@ LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %D(us)" 
 </Directory>
 
 <VirtualHost *:5000>
-    WSGIDaemonProcess keystone-public processes=5 threads=1 user=ubuntu display-name=%{GROUP}
+    WSGIDaemonProcess keystone-public processes=5 threads=1 user=vagrant display-name=%{GROUP}
     WSGIProcessGroup keystone-public
     WSGIScriptAlias / /usr/local/bin/keystone-wsgi-public
     WSGIApplicationGroup %{GLOBAL}
@@ -141,7 +141,7 @@ LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %D(us)" 
 </VirtualHost>
 
 <VirtualHost *:35357>
-    WSGIDaemonProcess keystone-admin processes=5 threads=1 user=ubuntu display-name=%{GROUP}
+    WSGIDaemonProcess keystone-admin processes=5 threads=1 user=vagrant display-name=%{GROUP}
     WSGIProcessGroup keystone-admin
     WSGIScriptAlias / /usr/local/bin/keystone-wsgi-admin
     WSGIApplicationGroup %{GLOBAL}
